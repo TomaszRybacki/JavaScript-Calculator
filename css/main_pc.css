@@ -1,0 +1,171 @@
+/* Kolory */
+
+/*
+szary:           hsl(72, 2%, 49%);
+czarny:          hsl(48, 6%, 17%);
+krawedzie:       hsl(48, 0%, 50%);
+biały:           hsl(60, 100%, 99%);
+pomarańczowy:    hsl(18, 60%, 53%);
+bateria:         hsl(26, 25%, 26%);
+    */
+
+/* Czcionki */
+
+/*
+w3-large	Specifies a font size of 18 pixels
+w3-xlarge	Specifies a font size of 24 pixels
+w3-xxlarge	Specifies a font size of 32 pixels
+w3-xxxlarge	Specifies a font size of 48 pixels
+w3-jumbo	Specifies a font size of 64 pixels
+*/
+
+#wrapper {
+    background-image: url(../images/background.jpg);
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calculator {
+    width: 300px;
+    height: 400px;
+    background: hsl(48, 6%, 17%);
+    border-radius: 20px;
+    box-shadow: 5px 5px 8px 2px black;
+}
+
+#top {
+    width: 280px;
+    height: 60px;
+    background: hsl(48, 6%, 22%);
+    border: solid 2px hsl(48, 0%, 50%);
+    margin: 10px auto 0px auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+#name {
+    width: 140px;
+    height: 60px;
+    background: none;
+    display: flex;
+    align-items: center;
+}
+
+#battery {
+    width: 130px;
+    height: 40px;
+    background: hsl(26, 25%, 26%);
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0px -2px 4px 2px black;
+    display: flex;
+}
+
+.line {
+    width: 25%;
+    border-right: hsl(72, 2%, 49%) solid 1px;
+    height: 40px;
+}
+
+#middle {
+    width: 280px;
+    height: 70px;
+    background: hsl(48, 6%, 22%);
+    margin: 0 auto;
+    border: solid 2px hsl(48, 0%, 50%);
+    border-bottom: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#display {
+    width: 260px;
+    height: 60px;
+    background: hsl(72, 2%, 49%);
+    border-radius: 5px;
+    box-shadow: 0px -2px 4px 2px black;
+    font-family: "digital-7", sans-serif;
+    font-size: 48px;
+    box-sizing: border-box;
+    padding: 10px 20px 0px 0px;
+    text-align: right;
+    letter-spacing: -5px;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: "digital-7";
+    src: url(../digital-7.ttf);
+}
+
+#bottom {
+    width: 280px;
+    height: 250px;
+    background: hsl(48, 6%, 22%);
+    margin: 0 auto;
+    border: solid 2px hsl(48, 0%, 50%);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.button {
+    width: 55px;
+    height: 35px;
+    background: hsl(48, 6%, 17%);
+    margin: 5px 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px 2px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.special {
+    width: 115px;
+    height: 35px;
+    background: hsl(18, 60%, 53%);
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:active {
+    box-shadow: 1px 1px 2px 0px black;
+}
+
+/* ************ Styles ***************** */
+
+h1 {
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+p {
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+}
+
+.symbol {
+    font-size: 32px;
+}
+
