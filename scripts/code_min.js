@@ -48,6 +48,7 @@ allClearElem.onclick = function () {
     memory = 0;
     result = undefined;
     action = "none";
+    oneOperation = false;
 };
 
 clearElem.onclick = function () {
@@ -81,29 +82,46 @@ minusElem.onclick = subtraction;
 timesElem.onclick = multiplication;
 divideElem.onclick = division;
 
+let oneOperation = false;
+
+Number.prototype.countDecimals = function () {
+    if(Math.floor(this.valueOf()) === this.valueOf()) return 0;
+    return this.toString().split(".")[1].length || 0;
+}
 
 equalElem.onclick = function () {
     "use strict";
-    let value = displayElem.textContent;
-    value = Number(value.replace(/\s/g, ""));
+    if (oneOperation) {
+        let value = displayElem.textContent;
+        value = Number(value.replace(/\s/g, ""));
+        oneOperation = false;
+        switch (action) {
+        case "addition":
+            result = memory + value;
+            break;
+        case "subtraction":
+            result = memory - value;
+            break;
+        case "multiplication":
+            result = memory * value;
+            break;
+        case "division":
+            result = memory / value;
+            break;
+        }
+        if (result !== undefined) {
+            if (result > 999999999 || result < 0.0000001) {
+                displayElem.textContent = "ERROR";
+            } else if (result.countDecimals() >= 1) {
+                result = result.toFixed(2);
+                result = result.toString().split("").join(" ");
+                displayElem.textContent = result;
+            } else {
+                result = result.toString().split("").join(" ");
+                displayElem.textContent = result;
+            }
 
-    switch (action) {
-    case "addition":
-        result = memory + value;
-        break;
-    case "subtraction":
-        result = memory - value;
-        break;
-    case "multiplication":
-        result = memory * value;
-        break;
-    case "division":
-        result = memory / value;
-        break;
-    }
-    if (result !== undefined) {
-        result = result.toString().split("").join(" ");
-        displayElem.textContent = result;
+        }
     }
 };
 
@@ -116,6 +134,8 @@ function addition() {
     displayElem.textContent = "";
     action = "addition";
     clickCount = 0;
+    oneOperation = true;
+    dotTest = true;
     return memory = value;
 }
 
@@ -126,6 +146,8 @@ function subtraction() {
     displayElem.textContent = "";
     action = "subtraction";
     clickCount = 0;
+    oneOperation = true;
+    dotTest = true;
     return memory = value;
 }
 
@@ -136,6 +158,8 @@ function multiplication() {
     displayElem.textContent = "";
     action = "multiplication";
     clickCount = 0;
+    oneOperation = true;
+    dotTest = true;
     return memory = value;
 }
 
@@ -146,5 +170,7 @@ function division() {
     displayElem.textContent = "";
     action = "division";
     clickCount = 0;
+    oneOperation = true;
+    dotTest = true;
     return memory = value;
 }
