@@ -1,9 +1,23 @@
 # JavaScript-Calculator
-<<-------------- Advanced Front End Development Projects -------------->>
 
-<<-------- Build a JavaScript Calculator - Free Code Camp challenge -------->>
+Basic calculator that can add, substract, multiply and divide two numbers.
 
-</ Basic calculator that can add, substract, multiply and divide two numbers. />
-</ Build with HTML5, CSS3, JavaScript                                />
+## Free Code Camp challenge
 
-</------------------------------------------------ made by TOMASZ RYBACKI
+This project was built for my code skill training. Inspired by the following challenge: [Build a JavaScript Calculator](https://www.freecodecamp.org/challenges/build-a-javascript-calculator).
+
+## Built with
+
+* HTML5
+* CSS3
+* JavaScript
+
+## Author
+
+__TOMASZ RYBACKI__
+
+Visit my [website](http://tomasz-rybacki.pl).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
